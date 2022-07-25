@@ -1,0 +1,34 @@
+.nav_list{
+    list-style: none;
+    display: flex;
+}
+.nav_list li {
+    margin-right: 5%;
+    border: 1px solid #333;
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-size: 15px;
+    background-color: #f2f2f2;
+    transition: 0.3s;
+    user-select: none;
+    &:hover{
+        background-color: #d0d0d0;
+        cursor: pointer;
+    }
+}
+.btn{
+    padding: 5px 10px;
+    background-color: aquamarine;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover{
+        color:#fff;
+        background-color: rgb(255, 142, 142);
+        transition: 0.3s;
+    }
+}
+.active-page{
+    background-color: #fff;
+    color: red;
+}

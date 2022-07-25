@@ -1,24 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import { publicRoutes } from "./routes";
+import Layout from "./layouts";
+import "./App.css";
+import { createContext, useState } from "react";
+import Popup from "./layouts/Popup";
+
+export const ResultContext = createContext();
 function App() {
+  const [resultDetail, setResultDetail] = useState("");
+  const [getEmail, setEmail] = useState("");
+  const [pop, setPop] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router>
+      <div className="container">
+        <div
+          className="full-screen"
+          id="full"
+          onClick={(e) => {
+            e.target.classList.remove("active");
+            document.getElementById("div").classList.remove("active");
+          }}
+        ></div>
+        <ResultContext.Provider
+          value={{
+            pop,
+            setPop,
+            resultDetail,
+            setResultDetail,
+            getEmail,
+            setEmail,
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div className="content">
+            {pop && <Popup />}
+            <Routes>
+              {publicRoutes.map((route, index) => {
+                const Page = route.component;
+                return (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={
+                      <Layout>
+                        <Page />
+                      </Layout>
+                    }
+                  />
+                );
+              })}
+            </Routes>
+          </div>
+        </ResultContext.Provider>
+      </div>
+    </Router>
   );
 }
 
