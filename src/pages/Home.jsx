@@ -5,12 +5,6 @@ import {ResultContext} from "../App"
 import "./home.scss"
 import Slides from "../layouts/slides"
 
-// ---------
-import New from "../layouts/New"
-import Popup from "../layouts/Popup";
-
-// ---------Popup
-
 function Home() {
     const [all , setAll] = useState([])
     const [page, setPage] = useState(1)
@@ -24,25 +18,6 @@ function Home() {
             setAll(response.data.items)
         })
     },[page])
-
-    // ---------Scroll---------
-    // useMemo(() => {
-    //     const handleScroll = () => {
-    //         if (window.scrollY >= 500) {
-    //             setPop(true)
-    //             document.body.style.overflow = 'hidden';
-    //         } else {
-    //             setPop(false)
-    //             document.body.style.overflow = '';
-
-    //         }
-    //     }
-    //     window.addEventListener('scroll', handleScroll)
-    //     // clear function
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll)
-    //     }
-    // },[])
     
     useMemo(() => {
         setTimeout(() => {
@@ -76,7 +51,6 @@ function Home() {
                 <button className="btn" onClick={(e) => {setPage(4)}}>4</button>
             </div>
         </div>
-        {/* <New/> */}
     </div>
      );
 }

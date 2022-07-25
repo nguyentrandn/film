@@ -15,7 +15,7 @@ function Navbar() {
 
   return (
     <div className="nav_container">
-      <Link to={"/"} className="logo">
+      <Link to={"/film"} className="logo">
         LOGO
       </Link>
       <div className="nav_menu">
