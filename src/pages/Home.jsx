@@ -62,7 +62,7 @@ function Home() {
                 <Link 
                     key={index}
                     className="card-link"
-                    to={`/film/`} onClick={() => resultFilm.setResultDetail(res.slug)} 
+                    to={`/filmDetail/`} onClick={() => resultFilm.setResultDetail(res.slug)} 
                 >
                     <div className="card" style={{backgroundImage: `url({/*../asset/NguyenCV.png*/})`}}>                    
                         <p>{res.name}</p>
