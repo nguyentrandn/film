@@ -1,7 +1,7 @@
 {
-  "name": "film",
+  "name": "film/home",
   "version": "0.1.0",
-  "homepage": "https://nguyentrandn.github.io/film",
+  "homepage": "https://nguyentrandn.github.io/film/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
